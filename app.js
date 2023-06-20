@@ -1,30 +1,21 @@
-import React from "react"
+import React, { useEffect } from "react"
 import ReactDOM  from "react-dom/client"
+import { useState, useEffect } from "react";
+import Header from "./Components/header";
+import Card from "./Components/RestaurantsCard";
+import Body from "./Components/Body";
 
-const heading = React.createElement(
-    "h1",
-    {
-      id: "title",
-    },
-    "heading"
-  );
-  const heading1 = React.createElement(
-    "h1",
-    {
-      id: "title",
-    },
-    "heading1"
-  );
-  
-  const container = React.createElement(
-    "div",
-    {
-      id: "container",
-    },
-    [heading, heading1]
-  );
-  
+
+const AppLayout=()=>{
+  return(
+    <div className="app">
+      <Header/>
+      <Body/>
+    </div>
+  )
+};
+
   // create root using createRoot
   const root = ReactDOM.createRoot(document.getElementById("root"));
   // passing react element inside root
-  root.render(container);
+  root.render(<AppLayout/>);

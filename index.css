@@ -1,3 +1,38 @@
-#container{
-    background-color: aqua;
+ul>li{
+    list-style: none;
+    padding: 20px;
 }
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    margin: 0px 200px;
+}
+
+.nav{
+    display: flex;
+
+}
+.cartbody{
+    width: 300px;
+    margin: 15px 5px;
+    border:1px solid black;
+
+}
+
+img{
+    width: 100%;
+}
+.carttext{
+    font-size: 30px;
+    margin: auto;
+    padding: auto;
+}
+
+.carts{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 25px;
+
+}
+
