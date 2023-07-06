@@ -1,21 +1,52 @@
-import React, { useEffect } from "react"
+import React from "react"
 import ReactDOM  from "react-dom/client"
 import { useState, useEffect } from "react";
 import Header from "./Components/header";
-import Card from "./Components/RestaurantsCard";
 import Body from "./Components/Body";
-
+import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+import Contact from "./Components/contact";
+import About from "./Components/about";
 
 const AppLayout=()=>{
   return(
     <div className="app">
       <Header/>
-      <Body/>
+      <Outlet/>
     </div>
   )
 };
 
-  // create root using createRoot
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  // passing react element inside root
-  root.render(<AppLayout/>);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout/>,
+    children:[
+
+    { path: "/",
+      element: <Body/>
+    },
+
+    { path: "/home",
+      element: <Body/>
+    },
+
+    {
+      path: "/about",
+      element: <About/>,
+    },
+
+    {
+      path: "/contact",
+      element: <Contact/>,
+    },
+  ]
+
+  },
+
+
+
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);

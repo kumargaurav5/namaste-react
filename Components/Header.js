@@ -1,14 +1,16 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 const Header=()=>(
     <div className="header">
       <div className="logo">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/011/468/885/small/food-logo-spoon-fork-icon-illustration-symbol-for-fast-delivery-app-restaurant-template-free-vector.jpg"/>
+        <img src={require('./food-logo-spoon-fork-icon-illustration-symbol-for-fast-delivery-app-restaurant-template-free-vector-removebg-preview.png')}/>
       </div>
       <div className="nav-items">
         <ul className="nav">
-          <li>Home</li>
-          <li >About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
+          <li><Link to ='/home'>Home </Link></li>
+          <li><Link to="/About">About Us </Link></li>
+          <li><Link to="/Contact">Contact Us</Link></li>
+          <li> Cart</li>
         </ul>
       </div>
     </div>
