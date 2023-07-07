@@ -5,13 +5,15 @@ import Header from "./Components/header";
 import Body from "./Components/Body";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import Contact from "./Components/contact";
-import About from "./Components/about";
+import About from "/Components/about";
+import RestaurantMenu from "./Components/RestaurantMenu";
 
 const AppLayout=()=>{
   return(
     <div className="app">
       <Header/>
       <Outlet/>
+
     </div>
   )
 };
@@ -26,10 +28,6 @@ const router = createBrowserRouter([
       element: <Body/>
     },
 
-    { path: "/home",
-      element: <Body/>
-    },
-
     {
       path: "/about",
       element: <About/>,
@@ -38,6 +36,11 @@ const router = createBrowserRouter([
     {
       path: "/contact",
       element: <Contact/>,
+    },
+
+    {
+      path: "/restaurant/:id",
+      element: <RestaurantMenu/>,
     },
   ]
 
